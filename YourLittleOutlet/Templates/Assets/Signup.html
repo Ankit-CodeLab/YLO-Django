@@ -1,0 +1,88 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+
+    <link rel="icon" href="{% static 'Images/Logo.png' %}">
+
+    <link rel="stylesheet" href="{% static 'YLO.css' %}">
+
+    <title>YLO - Sign Up</title>
+</head>
+<body>
+    
+    <nav>
+
+        <div class="navbar Signup">
+
+            <a href="{% url 'Home' %}"><img src="{% static 'Images/Logo.png' %}" alt="Logo">Your Little Outlet</a>
+
+        </div>
+
+    </nav>
+
+    <div class="Signup-main">
+
+        <div class="Signup-Cont">
+
+            <div class="Signup-Box">
+
+                <p>Sign Up</p>
+
+                <hr>
+
+                <form action="" method="post">
+
+                    {% csrf_token %}
+
+                    <label for="user_name">Username : </label>
+                    <input type="text" name="user_name" required>
+                    <label for="Email">Email: </label>
+                    <input type="email" name="Email" required >
+                    <label for="Contact">Contact: </label>
+                    <input type="text" name="Contact" pattern="\d{10}" title="Please enter a 10-digit contact number" required>
+                    <label for="Password1">Create Password : </label>
+                    <span>
+                        <i id="eye" class="bi bi-eye-fill"></i>
+                        <input type="password" name="Password1" id="password" required>
+                    </span>
+                    <label for="Password2">Re-Type Password : </label>
+                    <span>
+                        <i id="eye2" class="bi bi-eye-fill"></i>
+                        <input type="password" name="Password2" id="password2" required>
+                    </span>
+                    
+                    {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert-box alert">{{ message }}</div>
+                    {% endfor %}
+                    {% endif %}
+
+                    <div class="Signup-page-btns">
+
+                        <button name="Signup">Sign Up</button>
+                        <a href="{% url 'Login' %}">Login</a>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+<script src="{% static 'YLO.js' %}"></script>
+
+</body>
+</html>

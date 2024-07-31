@@ -1,0 +1,194 @@
+{% load static %}
+{% load Cart_Template_Tag %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+
+    <link rel="icon" href="{% static 'Images/Logo.png' %}">
+
+    <link rel="stylesheet" href="{% static 'YLO.css' %}">
+
+    <title>YLO - Home</title>
+</head>
+
+<body>
+
+    <nav>
+
+        <div class="navbar">
+
+            <span id="Menuicon"><i id="menuicon" onclick="changemenuicon()"
+                    class="bi bi-menu-button-wide-fill"></i></span>
+
+            <div class="Nav-Cont">
+
+                <a href="{% url 'Home' %}"><img src="{% static 'Images/Logo.png' %}" alt="Logo">Your Little Outlet</a>
+
+                {% if user.is_authenticated %}
+
+                <a href="{% url 'Account' %}">
+
+                    {% if user.is_authenticated %}
+                    <p>{{user.username}}</p>
+                    {% else %}
+                    <p>Login</p>
+                    {% endif %}
+                    <img src="{% if user.customer.profile_pic %}/static/Images/{{user.customer.profile_pic}}{% else %}{% static 'Images/Profile_Pics/profile_pic.svg' %} {% endif %}"
+                        alt="">
+
+                </a>
+
+                {% else %}
+
+                <a href="{% url 'Login' %}">
+
+                    {% if user.is_authenticated %}
+                    <p>{{user.username}}</p>
+                    {% else %}
+                    <p>Login</p>
+                    {% endif %}
+                    <img src="{% static 'Images/Profile_Pics/profile_pic.svg' %}" alt="">
+
+                </a>
+
+                {% endif %}
+
+            </div>
+
+        </div>
+
+        <div class="sidebar">
+
+            <ul>
+
+                <a href="{% url 'Home' %}" class="Logo"><img src="{% static 'Images/Logo.png' %}" alt="Logo">Your Little
+                    Outlet</a>
+                <hr>
+                <li><a href="{% url 'Home' %}" class="active"><i class="bi bi-shop"></i>
+                        <p>Home</p>
+                    </a></li>
+                {% if user.is_authenticated %}
+                <li><a href="{% url 'Account' %}"><i class="bi bi-person-circle"></i>Account</a></li>
+                <li><a href="{% url 'MyOrders' %}"><i class="bi bi-bag-check"></i>My Orders</a></li>
+                {% if user.is_superuser %}
+                <li><a href="{% url 'Orders' %}"><i class="bi bi-bag-check"></i>Orders</a></li>
+                {% endif %}
+                <li><a href="{% url 'Cart' %}"><i class="bi bi-cart-check"></i>Cart
+                        {% if request.user|cart_item_count %}
+                        <div class="Cart-Items-Count">
+                            {{ request.user | cart_item_count }}
+                        </div>
+                        {% endif %}
+                    </a></li>
+                {% endif %}
+                <li><a href=""><i class="bi bi-clipboard-heart"></i>Reviews</a></li>
+                <li><a href="{% url 'About' %}"><i class="bi bi-journal-bookmark"></i>About Us</a></li>
+                <li><a href="{% url 'Contact' %}"><i class="bi bi-chat-square-dots"></i>Contact Us</a></li>
+                {% if user.is_superuser %}
+                <li><a href="{% url 'Add_Product' %}"><i class="bi bi-bag-plus"></i>Add Product</a></li>
+                {% endif %}
+
+            </ul>
+
+        </div>
+
+    </nav>
+
+    <main>
+
+        <div class="side-box"></div>
+
+        <div class="Main-box">
+
+            <section class="banners">
+
+                <div class="slider">
+
+                    <div class="slides">
+
+                        <div class="slide">
+                            <img src="{% static 'Images/banner-1.jpg' %}" alt="Banner Image 1">
+                        </div>
+                        <div class="slide">
+                            <img src="{% static 'Images/banner-2.jpg' %}" alt="Banner Image 2">
+                        </div>
+                        <div class="slide">
+                            <img src="{% static 'Images/banner-3.jpg' %}" alt="Banner Image 3">
+                        </div>
+                        <div class="slide">
+                            <img src="{% static 'Images/banner-4.jpg' %}" alt="Banner Image 4">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section class="Home">
+
+                <div class="list-box">
+
+                    {% for product in products %}
+                    
+                    <div class="product-list">
+
+                        <a href="{% url 'product' product.pk %}" class="product"><img
+                                src="{{ product.Product_Image.url }}" alt="Product Image" class="product"></a>
+
+                        <div class="product-info">
+
+                            <a href="{% url 'product' product.pk %}">
+                                <p>{{product.Product_Name}} - ₹{{product.Price}}</p>
+                            </a>
+
+                        </div>
+
+                        <div class="btns">
+
+                            <a href="{% url 'product' product.pk %}" class="view-btn">View</a>
+
+                        </div>
+
+                    </div>
+
+                    {% endfor %}
+
+                </div>
+
+                {% if messages %}
+                {% for message in messages %}
+                <div class="alert-box">
+                    <div class="alert alert-success">{{ message }}</div>
+                </div>
+                {% endfor %}
+                {% endif %}
+
+            </section>
+
+        </div>
+
+    </main>
+
+    <script src="{% static 'YLO.js' %}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+            $('.alert-box').delay(3000).fadeOut('slow');
+        });
+    </script>
+
+</body>
+
+</html>

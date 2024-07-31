@@ -1,0 +1,85 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+
+    <link rel="icon" href="{% static 'Images/Logo.png' %}">
+
+    <link rel="stylesheet" href="{% static 'YLO.css' %}">
+
+    <title>YLO - Login</title>
+</head>
+<body>
+    
+    <nav>
+
+        <div class="navbar login">
+
+            <a href="{% url 'Home' %}"><img src="{% static 'Images/Logo.png' %}" alt="Logo">Your Little Outlet</a>
+
+        </div>
+
+    </nav>
+
+    <div class="Login-main">
+
+        <div class="Login-Cont">
+
+            <div class="Login-Box" id="login-box">
+
+                <p>Login</p>
+
+                <hr>
+
+                <form action="" method="post">
+
+                    {% csrf_token %}
+
+                    <label for="Email">Username or Email : </label>
+                    <input type="text" name="Email" required>
+                    <label for="Password">Password : </label>
+                    <span>
+                        <i id="eye" class="bi bi-eye-fill"></i>
+                        <input type="password" name="Password" id="password" required>
+                    </span>
+
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert{% if message.tags %} {{ message.tags }}{% endif %}">
+                                {{ message|safe }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+
+                    <div id="forgot-password-link">
+                        <a href="{% url 'password_reset_request' %}" >Forgot Password</a>
+                    </div>
+                    
+                    <div class="Login-page-btns">
+
+                        <button name="Login">Login</button>
+                        <a href="{% url 'Sign Up' %}">Sign Up</a>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+<script src="{% static 'YLO.js' %}"></script>
+
+</body>
+</html>

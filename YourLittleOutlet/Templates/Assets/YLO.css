@@ -1,0 +1,1871 @@
+:root {
+
+    --bodybg: white;
+    --navbg: #262626;
+    --navtext: white;
+    --navhoverbg: white;
+    --navhovertext: #262626;
+    
+    --loginboxbg: #262626;
+    --loginboxtext: white;
+    --loginboxbtnbg: white;
+    --loginboxbtntext: #262626;
+
+    --Signupboxbg: #262626;
+    --Signupboxtext: white;
+    --Signupboxbtnbg: white;
+    --Signupboxbtntext: #262626;
+
+    --AddProductboxbg: #262626;
+    --AddProductboxtext: white;
+    --AddProductboxbtnbg: white;
+    --AddProductboxbtntext: #262626;
+
+    --alertboxbg: #10A514;
+    --alertboxtext: white;
+
+    --accountboxbg: #e9e9e9;
+    --accountbtntext: black;
+    --accountbtnhbg: #262626;
+    --accountbtnhtext: white;
+    --accountformboxbg: #262626;
+
+    --aboutustext: black;
+
+    --contacttext: black;
+
+}
+
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+}
+
+input,textarea,button,select,a {
+
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+}
+
+a:focus,a:visited,a:active {
+    outline: none;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+a {
+
+    font-family: 'Oswald', sans-serif;
+    text-decoration: none;
+    cursor: pointer;
+
+}
+
+li {
+
+    list-style-type: none;
+
+}
+
+button {
+
+    font-family: 'Oswald', sans-serif;
+    cursor: pointer;
+
+}
+
+nav .sidebar .active {
+
+    background-color: var(--navhoverbg);
+    color: var(--navhovertext);
+
+}
+
+body { 
+
+    background-color: var(--bodybg);
+    min-height: 100vh;
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+
+}
+
+nav .navbar {
+
+    width: 100%;
+    position: fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+    background-color: var(--navbg);
+    height: 50px;
+    z-index: 10;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+}
+
+nav #Menuicon {
+
+    width: 70px;
+    color: var(--navtext); 
+    padding-left: 20px; 
+    cursor: pointer;
+
+}
+
+nav .Nav-Cont {
+
+    width: 95%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+nav .navbar a {
+
+    display: flex;
+    align-items: center;
+    color: var(--navtext);
+
+}
+
+nav .navbar img {
+
+    width: 35px;
+    margin: 0 25px 0 0;
+
+}
+
+nav .sidebar .Logo {
+
+    display: none;
+
+}
+
+nav .sidebar hr {
+
+    display: none;
+
+}
+
+.Logo img {
+
+    width: 35px;
+    margin: 0 10px 0 0;
+
+}
+
+nav .sidebar .Logo:hover {
+
+    background: none;
+    color: var(--navtext);
+
+}
+
+nav hr {
+
+    width: 100%;
+    background: var(--navtext);
+
+}
+
+nav .navbar a:last-child {
+
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+nav .login a:last-child {
+
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+
+}
+
+nav .Signup a:last-child {
+
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+
+}
+
+nav .AddProduct a:last-child {
+
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+
+}
+
+nav .navbar a:last-child img {
+
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin: 0 40px 0 15px;
+
+}
+
+nav .sidebar {
+
+    width: 200px;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transition: 0.3s;
+    z-index: 9;
+
+}
+
+nav .hidden-sidebar {
+
+    left: -300px;
+
+}
+
+nav .sidebar ul { 
+
+    padding: 60px 10px 0 10px;
+    height: 100%;
+    background-color: var(--navbg);
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+
+nav .sidebar li {
+
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+}
+
+nav .sidebar a {
+
+    width: 100%;
+    height: 30px;
+    margin: 10px 0;
+    padding: 0 10px;
+    color: var(--navtext);
+    display: flex;
+    align-items: center;
+    border: 0;
+    border-radius: 6px;
+
+}
+
+nav .sidebar i {
+
+    padding: 0 10px 0 0;
+
+}
+
+nav .sidebar a:hover {
+
+    background-color: var(--navhoverbg);
+    color: var(--navhovertext);
+
+}
+
+.Cart-Items-Count {
+
+    background: white;
+    color: black;
+    width: 17px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    height: 17px;
+    margin: 0 10px;
+    font-size: 12px;
+}
+
+.active .Cart-Items-Count {
+
+    background: black;
+    color: white;
+
+}
+
+main {
+
+    width: 100%;
+    padding: 70px 0 0 0;
+    display: flex;
+
+}
+
+.side-box {
+
+    width: 200px;
+    transition: 0.3s;
+
+}
+
+.hidden-sidebox {
+
+    width: 0;
+
+}
+
+.Main-box {
+
+    width: 85%;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s;
+
+}
+
+.large-main {
+
+    width: 100%;
+
+}
+
+/*---------------------------------------------------- Home Page ----------------------------------------------------*/
+
+.banners {
+    width: 100%;
+    margin: 0 0 20px 0;
+    height: 200px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider {
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.slides {
+    width: 400%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide {
+    width: 100%;
+    transform: translate(-100%, 0px);
+    animation: slide 30s infinite;
+    height: 200px;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes slide {
+    0% {
+        transform: translate(0%);
+    }
+    10% {
+        transform: translate(0%);
+    }
+    20% {
+        transform: translate(-100%);
+    }
+    30% {
+        transform: translate(-100%);
+    }
+    40% {
+        transform: translate(-200%);
+    }
+    50% {
+        transform: translate(-200%);
+    }
+    60% {
+        transform: translate(-300%);
+    }
+    70% {
+        transform: translate(-300%);
+    }
+    75% {
+        transform: translate(-200%);
+    }
+    85% {
+        transform: translate(-200%);
+    }
+    90% {
+        transform: translate(-100%);
+    }
+    95% {
+        transform: translate(-100%);
+    }
+    100% {
+        transform: translate(0%);
+    }
+
+}
+
+.list-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    grid-column-gap: 25px;
+}
+
+.product-list {
+    margin-bottom: 25px;
+    background-color: rgb(34 34 34);
+    padding: 20px;
+    border-radius: 20px;
+    transition: 0.4s;
+}
+
+.product-list img {
+    height: 330px;
+}
+
+.product-list:hover {
+    transform: scale(1.03);
+}
+
+.product-list .product {
+    width: 100%;
+    border-radius: 5%;
+    height: 200px;
+}
+
+.product-info a{    
+    color: black;
+    font-size: 18px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.product-info a p {
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+.btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btns a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    height: 25px;
+    font-size: 14px;
+    background-color: white;
+    border: 0px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.view-btn {
+    width: 100%;
+}
+
+.alert-box {
+
+    padding: 10px;
+    border-radius: 10px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--alertboxbg);
+    color: var(--alertboxtext);
+
+}
+
+/*--------------------------------------------------- Login Page ---------------------------------------------------*/
+
+.Login-main {
+
+    width: 100%;
+    min-height: 100vh;
+    padding: 70px 20px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--loginboxtext);
+
+}
+
+.Login-main .Login-Cont {
+
+    width: 350px;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--loginboxbg);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    animation: Login-box 1s;
+
+}
+
+@keyframes Login-box {
+
+    from {top:-500px}
+    to {top: 0;}
+
+} 
+
+.Login-main .Login-Box {
+
+    width: 230px;
+    height: 100%;
+
+}
+
+.Login-Box form {
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+
+#forgot-password-box form div {
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+
+.Login-main .Login-Box p {
+
+    font-size: 25px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.Login-Box hr {
+
+    width: 100%;
+    margin: 20px 0;
+
+}
+
+.Login-Box input {
+
+    padding: 5px;
+    margin: 5px 0 15px 0;
+    border: none;
+    border-radius: 4px;
+
+}
+
+.Login-Box button {
+
+    width: 50%;
+    padding: 5px;
+    margin: 15px 4px 15px 0;
+    font-size: 15px;
+    border: none;
+    border-radius: 4px;
+    color: var(--loginboxbtntext);
+    background-color: var(--loginboxbtnbg);
+
+}
+
+#forgot-password-box form .Login-page-btns {
+
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    
+}
+
+.Login-Box .Login-page-btns {
+
+    width: 100%;
+    display: flex;
+
+}
+
+.Login-Box .Login-page-btns a {
+
+    width: 50%;
+    color: var(--loginboxbtntext);
+    background-color: var(--loginboxbtnbg);
+    margin: 15px 0 15px 4px;
+    font-size: 15px;
+    border: none;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.Login-Box span {
+
+    position: relative;
+
+}
+
+.Login-Box span input {
+
+    width: 100%;
+
+}
+
+.Login-Box span .bi {
+
+    color: black; 
+    position: absolute; 
+    right: 5px; 
+    top: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+
+}
+
+.Login-Box span .bi:hover{
+
+    transform: scale(1.2);
+}
+
+#forgot-password-link {
+
+    margin: 5px 0 0 0;
+
+}
+
+#forgot-password-link a {
+
+    color: var(--loginboxtext);
+
+}
+    
+/*---------------------------------------------------- Sign Page ----------------------------------------------------*/
+
+.Signup-main {
+
+    width: 100%;
+    min-height: 100vh;
+    padding: 70px 20px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--Signupboxtext);
+
+}
+
+.Signup-main .Signup-Cont {
+
+    width: 350px;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--Signupboxbg);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    animation: Signup-box 1s ease-in-out;
+
+}
+
+@keyframes Signup-box {
+
+    from {top:-700px}
+    to {top: 0;}
+
+} 
+
+.Signup-main .Signup-Box {
+
+    width: 230px;
+    height: 100%;
+
+}
+
+.Signup-Box form {
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.Signup-main .Signup-Box p {
+
+    font-size: 25px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.Signup-Box hr {
+
+    width: 100%;
+    margin: 20px 0;
+
+}
+
+.Signup-Box input {
+
+    padding: 5px;
+    margin: 5px 0 15px 0;
+    border: none;
+    border-radius: 4px;
+
+}
+
+.Signup-Box button {
+
+    width: 50%;
+    padding: 5px;
+    margin: 15px 4px 15px 0;
+    font-size: 15px;
+    border: none;
+    border-radius: 4px;
+    color: var(--Signupboxbtntext);
+    background-color: var(--Signupboxbtnbg);
+
+}
+
+.Signup-Box .Signup-page-btns {
+
+    width: 100%;
+    display: flex;
+
+}
+
+.Signup-Box .Signup-page-btns a {
+
+    width: 50%;
+    color: var(--Signupboxbtntext);
+    background-color: var(--Signupboxbtnbg);
+    margin: 15px 0 15px 4px;
+    font-size: 15px;
+    border: none;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.Signup-Box span {
+
+    position: relative;
+
+}
+
+.Signup-Box span input {
+
+    width: 100%;
+
+}
+
+.Signup-Box span .bi {
+
+    color: black; 
+    position: absolute; 
+    right: 5px; 
+    top: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+
+}
+
+.Signup-Box span .bi:hover{
+
+    transform: scale(1.2);
+}
+
+/*------------------------------------------------ Add Product Page -------------------------------------------------*/
+
+.AddProduct-main {
+
+    width: 100%;
+    min-height: 100vh;
+    padding: 70px 20px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--AddProductboxtext);
+
+}
+
+.AddProduct-main .AddProduct-Cont {
+
+    width: 350px;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--AddProductboxbg);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    animation: AddProduct-box 1s ease-in-out;
+
+}
+
+@keyframes AddProduct-box {
+
+    from {top:-700px}
+    to {top: 0;}
+
+} 
+
+.AddProduct-main .AddProduct-Box {
+
+    width: 230px;
+    height: 100%;
+
+}
+
+.AddProduct-Box form div {
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.AddProduct-main .AddProduct-Box p {
+
+    font-size: 25px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.AddProduct-Box hr {
+
+    width: 100%;
+    margin: 20px 0;
+
+}
+
+.AddProduct-Box input {
+
+    padding: 5px;
+    margin: 5px 0 15px 0;
+    border: none;
+    border-radius: 4px;
+
+}
+
+.AddProduct-Box button {
+
+    width: 50%;
+    padding: 5px;
+    margin: 15px 4px 15px 0;
+    font-size: 15px;
+    border: none;
+    border-radius: 4px;
+    color: var(--AddProductboxbtntext);
+    background-color: var(--AddProductboxbtnbg);
+
+}
+
+.AddProduct-Box textarea {
+
+    padding: 5px;
+    margin: 5px 0 15px 0;
+    border: none;
+    border-radius: 4px;
+    resize: none;
+    height: 60px;
+}
+
+.AddProduct-Box select {
+
+    padding: 5px;
+    margin: 5px 0 15px 0;
+    border: none;
+    border-radius: 4px;
+    
+}
+
+.AddProduct-Box .AddProduct-page-btns {
+
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.AddProduct-Box .AddProduct-page-btns a {
+
+    width: 50%;
+    color: var(--AddProductboxbtntext);
+    background-color: var(--AddProductboxbtnbg);
+    margin: 15px 0 15px 4px;
+    font-size: 15px;
+    border: none;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+form #id_Product_Image {
+
+    padding: 0;
+    margin: 10px 0 5px 0;
+
+}
+
+form #id_Product_Image_2 {
+
+    padding: 0;
+    margin: 10px 0 5px 0;
+
+} 
+
+form #id_Product_Image_3 {
+
+    padding: 0;
+    margin: 10px 0 5px 0;
+
+} 
+
+
+/*------------------------------------------------- Account Page ----------------------------------------------------*/
+
+.Account .Profile {
+
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 40px;
+    font-size: 25px;
+    padding: 5px 10px;
+    background: var(--accountboxbg);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+
+}
+
+.Profile img {
+
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+}
+
+.Profile p:last-child {
+
+    font-size: 16px;
+
+}
+
+.user-info {
+
+    margin: 20px 0;
+
+}
+
+.user-info p {
+
+    width: 100%;
+    cursor: default;
+    padding: 5px 10px;
+    color: var(--accountbtntext);
+    background: var(--accountboxbg);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+
+}
+
+.Account-btns {
+
+    width: 100%;
+    display: flex;
+    
+}
+
+.Account-btns button {
+    
+    width: 100%;
+    border: none;
+    padding: 5px;
+    background: var(--accountboxbg);
+    margin: 0 5px 0 0;
+    font-size: 16px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+
+}
+
+.Account-btns a {
+
+    width: 100%;
+    border: none;
+    padding: 5px;
+    margin: 0 0 0 5px;
+    font-size: 16px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+    display: flex;
+    justify-content: center;
+    background: var(--accountboxbg);
+    color: var(--accountbtntext);
+
+}
+
+.Account-btns button:hover {
+
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    color: var(--accountbtnhtext);
+    background-color: var(--accountbtnhbg);
+    
+}
+
+.Account-btns a:hover {
+
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    color: var(--accountbtnhtext);
+    background-color: var(--accountbtnhbg);
+    
+}
+
+.account-form {
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    top: 50px;
+    left: 0;
+    position: absolute;
+    backdrop-filter: blur(10px);
+
+}
+
+#edit-profile-form {
+
+    width: 350px;
+    border-radius: 10px;
+    display: flex;
+    margin: 20px;
+    color: var(--alertboxtext);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--accountformboxbg);
+    padding: 20px 0;
+
+}
+
+#edit-profile-form div {
+
+    width: 230px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+#edit-profile-form p {
+
+    font-size: 20px;
+
+}
+
+#edit-profile-form hr {
+
+    width: 100%;
+    margin: 20px 0;
+
+}
+
+#edit-profile-form  .Account-btn {
+
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+
+}
+
+#edit-profile-form input {
+
+    padding: 5px;
+    margin: 5px 0 15px 0;
+    border: none;
+    border-radius: 4px;
+
+}
+
+#edit-profile-form button {
+
+    width: 50%;
+    padding: 5px;
+    margin: 15px 4px 15px 0;
+    font-size: 15px;
+    border: none;
+    border-radius: 4px;
+    color: var(--AddProductboxbtntext);
+    background-color: var(--AddProductboxbtnbg);
+
+}
+
+#edit-profile-form textarea {
+
+    padding: 5px;
+    margin: 5px 0 15px 0;
+    border: none;
+    border-radius: 4px;
+    resize: none;
+    height: 80px;
+}
+
+#edit-profile-form select {
+
+    padding: 5px;
+    margin: 5px 0 15px 0;
+    border: none;
+    border-radius: 4px;
+    
+}
+
+#edit-profile-form input[type="file"] {
+    padding: 5px 0;
+    margin: 5px 0 15px 0;
+    border: none;
+    border-radius: 4px;
+}
+
+/*------------------------------------------------- About Us Page --------------------------------------------------*/
+
+.About-Us {
+    color: var(--aboutustext);
+    text-align: center;
+}
+
+.A-Heading {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.About-Us p {
+    margin-bottom: 10px;
+}
+
+.About-Us .footer {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+/*------------------------------------------------ Contact Us Page --------------------------------------------------*/
+
+.contact {
+    color: var(--contacttext);
+    text-align: center;
+}
+
+.C-Heading {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.contact p {
+    margin-bottom: 10px;
+}
+
+.contact .footer {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+/*--------------------------------------------------Products Page-------------------------------------------------*/
+
+.Product {
+
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+
+}
+
+.products {
+    width: 40%;
+}
+
+.product-imgs {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.product-img-bg {
+    width: 275px;
+    height: 340px;
+    border-radius: 15px;
+    background-color: rgb(34 34 34);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-imgs img{
+    width: 250px;
+    height: 315px;
+    border-radius: 15px;
+}
+
+.product-list img {
+    height: 270px;
+}
+
+.product-list-2 img {
+    height: 270px;
+}
+
+.products-colours {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.product-colours-img {
+    width: 100px;
+    height: 120px;
+    border-radius: 10px;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(34 34 34);
+}
+
+.products-colours .active {
+    background-color: rgb(68, 68, 68);
+    border-radius: 10px;
+}
+
+.product-colours-img:hover {
+    background-color: rgb(68, 68, 68);
+}
+
+.product-colours-img img {
+    width: 80px;
+    height: 100px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.P-Details {
+    color: white;
+    width: 35%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.P-Details-D {
+    background-color: rgb(34 34 34);
+    width: 90%;
+    height: fit-content;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.ProductN {
+    font-size: 40px;
+}
+
+.ProductP {
+    font-size: 25px;
+}
+
+.ProductN {
+    font-size: 40px;
+}
+
+.ProductA {
+    width: 95%;
+}
+
+.btns-2 {
+    display: flex;
+    margin-top: 10px;
+    align-items: center;
+    gap: 10px;
+}
+
+.btns-2 a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 30px;
+    color: black;
+    font-size: 14px;
+    background-color: white;
+    border: 0px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.recommandation {
+    width: 80%;
+}
+
+.list-box-2 {
+    overflow: scroll;
+    height: 85vh;
+    border-radius: 20px
+}
+
+.aside-bar {
+    width: 30%;
+}
+
+footer {
+    margin-left: 235px;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: sticky;
+}
+
+.recommandation center p {
+
+    color: white;
+    font-size: 20px;
+    margin-bottom: 20px;
+    background-color: rgb(34, 34, 34);
+    border-radius: 5px;
+    padding: 6px;
+
+}
+
+/*--------------------------------------------------Cart Page-------------------------------------------------*/
+
+.Cart {
+
+    width: 100%;
+    margin-bottom: 25px;
+
+}
+
+.Cart-Item {
+
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.C-product-list {
+    width: 250px;
+    margin-bottom: 25px;
+    background-color: rgb(34 34 34);
+    padding: 20px;
+    border-radius: 20px;
+    transition: 0.4s;
+}
+
+.C-product-list img {
+    height: 330px;
+}
+
+.C-product-list:hover {
+    transform: scale(1.03);
+}
+
+.C-product-list .C-product {
+    width: 100%;
+    border-radius: 5%;
+    height: 200px;
+}
+
+.Cart-Item .C-product-info {
+
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+
+}
+
+.C-product-info a{    
+    color: white;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.C-product-info div {
+
+    margin: 5px 0;
+
+}
+
+.C-product-info p{    
+    display: flex;
+}
+
+.C-product-info div{    
+    display: flex;
+    gap: 5px;
+}
+
+.C-product-info a p {
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+.C-btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.C-btns a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    height: 25px;
+    font-size: 14px;
+    background-color: white;
+    border: 0px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.C-view-btn {
+    width: 100%;
+}
+
+.size-buttons {
+    margin: 5px 10px;
+}
+
+.size-buttons input[type="radio"] {
+    display: none;
+}
+
+.size-buttons label {
+    display: inline-block;
+    padding: 0 5px;
+    cursor: pointer;
+    background-color: #f8f9fa;
+    color: #495057;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.size-buttons input[type="radio"]:checked + label {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.Total-Price {
+
+    width: 100%;
+    display: flex;
+
+
+}
+
+.Total-Price div:nth-child(1) {
+
+    width: 80%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: black;
+    color: white;
+    padding: 0 15px;
+    border-radius: 5px;
+
+}
+
+.Order-btn {
+
+    width: 20%;
+    height: 30px;
+    display: flex;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    background-color: orange;
+    
+}
+
+.Order-btn a {
+    color: black;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Order-btn:hover{
+    background-color: rgb(23, 216, 23);
+}
+
+.out-of-stock {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 30px;
+    color: black;
+    font-size: 14px;
+    background-color: white;
+    border: 0px;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+.PaymentMode {
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    margin-bottom: 5px;
+
+}
+
+/*----------------------------------------------------Order Details-------------------------------------------------*/
+
+.Order-Details {
+
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.Order-User {
+
+    width: 70%;
+    background-color: #262626;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+
+}
+
+.Order-User .head {
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.Order-User p:first-child {
+
+    font-size: 25px;
+
+}
+
+.Order-User hr {
+
+    width: 100%;
+    margin: 10px 0;
+
+}
+
+.Order-User .list-box {
+
+    width: 100%;
+
+}
+
+.Order-User .product-list {
+
+    margin: 10px 0;
+
+}
+
+/*----------------------------------------------------Screen-Sizes-------------------------------------------------*/
+
+
+@media (max-width: 1300px) {
+
+    .aside-bar {
+
+        width: 35%;
+
+    }
+
+    .P-Details {
+
+        width: 30%;
+
+    }
+
+}
+ 
+@media (max-width: 1150px) {
+
+    nav .sidebar {
+
+        left: -300px;
+
+    }
+
+    nav .hidden-sidebar {
+
+        left: 0;
+        z-index: 9;
+
+    }
+
+    .side-box {
+
+        width: 0;
+
+    }
+
+    .Main-box {
+
+        width: 100%;
+
+    }
+
+    .P-Details {
+        width: 35%;
+    }
+
+    .aside-bar {
+        width: 30%;
+    }
+
+    .recommandation {
+        width: 100%;
+    }
+
+}
+
+@media (min-height: 900px), (max-width: 800px) {
+
+    .list-box-2 {
+        height: auto;
+    }
+
+    .P-Details {
+        width: 40%;
+    }
+
+    .products {
+        width: 40%;
+    }
+
+    .aside-bar {
+        width: 100%;
+    }
+
+    .recommandation {
+        width: 100%;
+        margin-top: 20px;
+    }  
+
+    .list-box-2 {
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-column-gap: 25px;
+    }
+    
+    .Product {
+
+        flex-direction: unset;
+        flex-wrap: wrap;
+
+    }
+
+}
+
+@media (max-width: 800px) {
+
+    .Product {
+
+        flex-direction: unset;
+        flex-wrap: wrap;
+
+    }
+
+    .list-box-2 {
+        height: auto;
+    }
+
+    .P-Details {
+        width: 40%;
+    }
+
+    .products {
+        width: 60%;
+    }
+
+    .aside-bar {
+        width: 100%;
+    }
+
+    .recommandation {
+        width: 100%;
+        margin-top: 20px;
+    }   
+
+    .list-box-2 {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-column-gap: 25px;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .Main-box {
+
+        width: 100%;
+
+    }
+
+    .Nav-Cont a:first-child {
+
+        display: none;
+
+    }
+
+    nav .Nav-Cont {
+
+        justify-content: flex-end;
+        
+    }
+
+    nav .sidebar .Logo {
+
+        display: flex;
+    
+    }
+    
+    nav .sidebar hr {
+    
+        display: flex;
+    
+    }
+
+    .Product {
+        flex-direction: column;
+    }
+
+    .products {
+        width: 100%;
+    }
+
+    .P-Details {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin: 20px 0;
+    }
+
+    .aside-bar {
+        width: 100%;
+        position: unset;
+    }
+
+    .recommandation {
+        width: 100%;
+    }
+
+    .product-list .product {
+        height: 280px;
+    }
+
+    .P-Details-D {
+        width: 100%;
+    }
+
+    .ProductA {
+        width: 100%;
+    }
+
+    .Total-Price {
+
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .Total-Price div:nth-child(1) {
+
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+    }
+    
+    .Order-btn {
+    
+        width: 100%;
+        
+    }
+
+    .C-product-list {
+        width: 300px;
+    }
+
+    .Order-User {
+
+        width: 90%;
+
+    }
+
+}
